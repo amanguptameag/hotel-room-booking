@@ -1,11 +1,4 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
+* Ruby version - 3.0.0
 
 * System dependencies
 
@@ -15,10 +8,9 @@ Things you may want to cover:
 
 * Database initialization
 
-* How to run the test suite
+# APIS
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. List all hotels with feature to filter by location.
+```
+  http://127.0.0.1:3000/hotels?location=gurgaon
+```

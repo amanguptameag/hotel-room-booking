@@ -10,34 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_06_04_054010) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_04_064044) do
   create_table "bookings", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "room_id", null: false
+    t.integer "room_id"
     t.date "check_in"
     t.date "check_out"
+    t.integer "payment_status"
+    t.integer "booking_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_bookings_on_room_id"
   end
 
   create_table "hotels", force: :cascade do |t|
     t.string "name"
     t.string "location"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "rooms", force: :cascade do |t|
-    t.integer "hotel_id", null: false
+    t.integer "hotel_id"
     t.string "room_number"
     t.string "room_type"
     t.decimal "price"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["hotel_id"], name: "index_rooms_on_hotel_id"
   end
 
-  add_foreign_key "bookings", "rooms"
-  add_foreign_key "rooms", "hotels"
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "username"
+    t.string "password"
+    t.string "phone_number"
+    t.string "email"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end

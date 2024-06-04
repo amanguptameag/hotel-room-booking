@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :hotels, only: [:index, :show] do
+    resources :rooms, only: [:index, :show]
+  end
+  resources :bookings, only: [:create, :show, :update, :destroy]
 end
