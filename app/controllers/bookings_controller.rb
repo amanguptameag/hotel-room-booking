@@ -2,10 +2,11 @@ class BookingsController < ApplicationController
     
     def create
       @booking = Booking.new(booking_params)
+      @booking.status = :confirmed
       if @booking.save
         render json: @booking, status: :created
       else
-        render json: @booking.errors, status: :unprocessable_entity
+        render json: {messages: @booking.errors.full_messages}, status: :unprocessable_entity
       end
     end
   

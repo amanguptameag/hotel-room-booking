@@ -5,8 +5,7 @@ class CreateBookings < ActiveRecord::Migration[7.0]
       t.integer :room_id
       t.date :check_in
       t.date :check_out
-      t.integer :payment_status
-      t.integer :booking_status
+      t.integer :status
 
       t.timestamps
     end

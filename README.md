@@ -14,3 +14,5 @@
 ```
   http://127.0.0.1:3000/hotels?location=gurgaon
 ```
+
+2. Allow users to book a room in a hotel by choosing no of rooms, check-in date, check-out date etc.

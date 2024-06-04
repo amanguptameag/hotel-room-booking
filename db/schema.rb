@@ -16,8 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_04_064044) do
     t.integer "room_id"
     t.date "check_in"
     t.date "check_out"
-    t.integer "payment_status"
-    t.integer "booking_status"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
