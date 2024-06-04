@@ -33,5 +33,10 @@ get  http://127.0.0.1:3000/bookings?user_id=1
 
 4. Allow users to modify the booking details (check-in, checkout dates etc.)
 ```
-patch http://127.0.0.1:3000/bookings/1
+patch  http://127.0.0.1:3000/bookings/1
+```
+
+5. Allow user to cancel the booking.
+```
+patch  http://127.0.0.1:3000/bookings/12/cancel_booking
 ```

@@ -37,10 +37,11 @@ class BookingsController < ApplicationController
     end
   end
 
-  def destroy
+  def cancel_booking
     @booking = Booking.find(params[:id])
-    @booking.destroy
-    head :no_content
+    @booking.status = :cancelled
+    @booking.save
+    render json: @booking
   end
 
   private

@@ -11,7 +11,7 @@ class Booking < ApplicationRecord
   private
 
   def no_overlapping_bookings
-    existing_bookings = Booking.where(room_id: room_id)
+    existing_bookings = Booking.where(room_id: room_id, status: :confirmed)
                                 .where.not(id: id)
                                 .where('check_in <= ? AND check_out >= ?', check_out, check_in)
     errors.add(:base, 'Room is already booked for the given date range') if existing_bookings.exists?
